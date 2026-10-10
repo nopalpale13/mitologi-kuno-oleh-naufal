@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Dewa Dewi dan Mitologi Kuno - Muhammad Naufal (Cilegon)</title>
+    <style>
+        :root {
+            --gold-light: #f1c40f;
+            --gold-primary: #d4af37;
+            --gold-dark: #aa820a;
+            --dark-space-1: #090a16;
+            --dark-space-2: #16182e;
+            --dark-space-3: #1e223f;
+            --text-light: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Cinzel', 'Times New Roman', serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: var(--text-light);
+            background: linear-gradient(135deg, var(--dark-space-1) 0%, var(--dark-space-2) 50%, var(--dark-space-3) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            background: linear-gradient(145deg, rgba(22, 24, 46, 0.95), rgba(10, 11, 24, 0.99));
+            border: 2px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.25);
+            margin: 30px 0;
+            position: relative;
+        }
+
+        /* Ornamen Bingkai Klasik Kuil Kuno dengan CSS Murni */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: 8px; bottom: 8px;
+            border: 1px dashed rgba(241, 196, 15, 0.4);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .header-decor {
+            text-align: center;
+            border-bottom: 2px solid var(--gold-primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Elemen Dekoratif Kuil Kuno Murni CSS (Bukan Gambar) */
+        .temple-icon {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            margin-bottom: 5px;
+            text-shadow: 0 0 12px rgba(241, 196, 15, 0.6);
+            letter-spacing: 5px;
+        }
+
+        h1 {
+            color: var(--gold-light);
+            text-align: center;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            margin: 5px 0;
+        }
+
+        h2, h3 {
+            color: var(--gold-primary);
+        }
+
+        .developer-tag {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #dcdde1;
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold-light);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--gold-primary);
+            border-radius: 8px;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--gold-light);
+            box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #0c0d19;
+            border: 1px solid var(--gold-light);
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .timer-box {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), rgba(22, 24, 46, 0.9));
+            padding: 12px 18px;
+            border-radius: 8px;
+            border: 1px solid var(--gold-primary);
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--gold-light);
+        }
+
+        .options-list label {
+            display: block;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 18px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #fff;
+            font-weight: normal;
+            transition: all 0.2s ease;
+        }
+
+        .options-list label:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-light);
+            transform: translateX(4px);
+        }
+
+        .options-list input {
+            margin-right: 12px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .cheating-warning {
+            background: rgba(231, 76, 60, 0.2);
+            border: 1px solid #e74c3c;
+            color: #ff9999;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .result-item {
+            background: rgba(15, 16, 32, 0.7);
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border-left: 6px solid #555;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .correct-ans {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .wrong-ans {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .status-jujur {
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+        }
+
+        .status-curang {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app-container">
+    <div class="header-decor">
+        <div class="temple-icon">🏛️ ⚡ 🔱</div>
+        <h1>Soal Dewa Dewi & Mitologi Kuno</h1>
+        <div class="developer-tag">Dikembangkan oleh: Muhammad Naufal (Cilegon)</div>
+    </div>
+
+    <!-- STEP 1: REGISTRASI -->
+    <div id="step-register">
+        <h3 style="text-align: center; color: var(--gold-light);">Formulir Identitas Peserta Ujian</h3>
+        <p style="text-align: center; color: #ccc; font-size: 0.95rem; margin-bottom: 25px;">Silakan masukkan data diri Anda sebelum memasuki gerbang kuil pengetahuan.</p>
+        <div class="form-group">
+            <label>Nama Lengkap:</label>
+            <input type="text" id="nama" placeholder="Masukkan nama lengkap Anda">
+        </div>
+        <div class="form-group">
+            <label>Kelas:</label>
+            <input type="text" id="kelas" placeholder="Masukkan kelas Anda">
+        </div>
+        <div class="form-group">
+            <label>Sekolah:</label>
+            <input type="text" id="sekolah" placeholder="Masukkan asal sekolah Anda">
+        </div>
+        <button onclick="mulaiUjian()">Mulai Ujian Sekarang</button>
+    </div>
+
+    <!-- STEP 2: UJIAN -->
+    <div id="step-exam" class="hidden">
+        <div class="timer-box">
+            <span id="participant-info">Peserta: -</span>
+            <span>Sisa Waktu: <span id="timer">90:00</span></span>
+        </div>
+        <div id="cheat-alert-box"></div>
+
+        <div id="question-container">
+            <!-- Soal dimuat secara dinamis -->
+        </div>
+        <button id="next-btn" onclick="selanjutnya()">Selanjutnya</button>
+    </div>
+
+    <!-- STEP 3: HASIL -->
+    <div id="step-result" class="hidden">
+        <h2 id="congrats-message" style="text-align: center; line-height: 1.5;"></h2>
+        <div id="score-display" style="text-align: center; font-size: 1.6rem; margin: 25px 0;"></div>
+        <div id="cheating-report" style="text-align: center; margin-bottom: 25px;"></div>
+        
+        <h3 style="border-bottom: 1px solid var(--gold-primary); padding-bottom: 10px;">Koreksi Detail Jawaban</h3>
+        <div id="review-container"></div>
+    </div>
+</div>
+
+<script>
+    // Data 35 Soal (15 Yunani, 3 Indonesia, 17 Mesir & Dunia Lain, termasuk 2 soal deskripsi analitis)
+    const questions = [
+        // --- MITOLOGI YUNANI (1-15) ---
+        { q: "Siapakah dewa penguasa gunung Olympus dan dewa petir dalam mitologi Yunani?", options: ["Poseidon", "Zeus", "Hades", "Ares"], answer: 1 },
+        { q: "Dewa lautan dan samudera yang membawa senjata Trisula dalam mitologi Yunani adalah...", options: ["Zeus", "Apollo", "Poseidon", "Hermes"], answer: 2 },
+        { q: "Siapakah dewi kebijaksanaan, perang strategis, dan keadilan dalam mitologi Yunani?", options: ["Athena", "Afrodit", "Artemis", "Hera"], answer: 0 },
+        { q: "Dewa alam bawah tanah (dunia orang mati) dalam mitologi Yunani bernama...", options: ["Kronos", "Ares", "Hades", "Dionisos"], answer: 2 },
+        { q: "Dewi cinta, kecantikan, dan gairah dalam mitologi Yunani adalah...", options: ["Hestia", "Afrodit", "Demeter", "Persephone"], answer: 1 },
+        { q: "Siapakah dewa matahari, musik, seni, dan ramalan dalam mitologi Yunani?", options: ["Hermes", "Hephaestus", "Apollo", "Dionisos"], answer: 2 },
+        { q: "Dewa perang yang haus darah dan agresif dalam mitologi Yunani adalah...", options: ["Ares", "Kratos", "Perseus", "Heracles"], answer: 0 },
+        { q: "Utusan para dewa yang dikenal memiliki sepatu bersayap dan kecepatan tinggi adalah...", options: ["Eros", "Hermes", "Pan", "Boreas"], answer: 1 },
+        { q: "Ratu para dewa dan pelindung pernikahan dalam mitologi Yunani, istri Zeus, adalah...", options: ["Rhea", "Gaia", "Hera", "Leto"], answer: 2 },
+        { q: "Dewa pandai besi, api, dan pengrajin para dewa di Olympus adalah...", options: ["Hephaestus", "Prometheus", "Atlas", "Hyperion"], answer: 0 },
+        { q: "Dewi perburuan, alam liar, dan bulan dalam mitologi Yunani bernama...", options: ["Artemis", "Athena", "Selene", "Hecate"], answer: 0 },
+        { q: "Dewa kesuburan, anggur, teater, dan pesta dalam mitologi Yunani adalah...", options: ["Hermes", "Dionisos", "Eros", "Asklepios"], answer: 1 },
+        { q: "Titan yang memimpin para Titan melawan para dewa Olympus dan dikurung di Tartarus adalah...", options: ["Oceanus", "Kronos", "Iapetus", "Coeus"], answer: 1 },
+        { q: "Pahlawan Yunani termahsyur yang memiliki titik lemah di tumitnya akibat Sungai Styx adalah...", options: ["Achilles", "Odysseus", "Perseus", "Theseus"], answer: 0 },
+        { q: "Makhluk berambut ular dalam mitologi Yunani yang dapat mengubah orang menjadi batu jika dipandang adalah...", options: ["Minotaur", "Medusa", "Chimera", "Harpy"], answer: 1 },
+
+        // --- MITOLOGI NUSANTARA / INDONESIA (16-18) ---
+        { q: "Dalam mitologi Sunda kuno, dewi padi dan kesuburan yang sangat dihormati adalah...", options: ["Dewi Sri", "Nyai Roro Kidul", "Batari Durga", "Sunan Ambu"], answer: 0 },
+        { q: "Penguasa Laut Selatan (Pantai Selatan Jawa) yang sering diasosiasikan sebagai ratu mitologi spiritual Nusantara adalah...", options: ["Dewi Lanjar", "Nyai Roro Kidul", "Kanjeng Ratu Kidul", "Nyi Ageng Serang"], answer: 2 },
+        { q: "Dalam pewayangan dan mitologi Jawa pengaruh Hindu-Buddha, raja para dewa di suargan (kahyangan) adalah...", options: ["Batara Guru", "Batara Indra", "Batara Bayu", "Batara Yama"], answer: 0 },
+
+        // --- MITOLOGI MESIR & DUNIA LAIN (19-35) ---
+        { q: "Siapakah dewa matahari tertinggi dalam mitologi Mesir kuno yang digambarkan berkepala elang?", options: ["Osiris", "Ra", "Anubis", "Horus"], answer: 1 },
+        { q: "Dewa kematian, mumifikasi, dan penuntun alam akhirat Mesir kuno yang berkepala serigala/jackal adalah...", options: ["Set", "Thoth", "Anubis", "Sobek"], answer: 2 },
+        { q: "Ratu langit dan pelindung sihir serta ibu dari Horus dalam mitologi Mesir kuno adalah...", options: ["Isis", "Nephthys", "Hathor", "Sekhmet"], answer: 0 },
+        { q: "Dewa alam baka dan kebangkitan dalam mitologi Mesir yang suami dari Isis adalah...", options: ["Osiris", "Horus", "Anubis", "Ptah"], answer: 0 },
+        { q: "Dewa kebijaksanaan, menulis, dan sains dalam mitologi Mesir yang berkepala burung ibis adalah...", options: ["Thoth", "Shu", "Geb", "Khepri"], answer: 0 },
+        { q: "Dewa kekacauan, badai, dan padang pasir dalam mitologi Mesir kuno adalah...", options: ["Anubis", "Set", "Apep", "Sobek"], answer: 1 },
+        { q: "Dalam mitologi Nordik (Skandinavia), raja para dewa yang bermata satu dan penguasa Asgard adalah...", options: ["Thor", "Loki", "Odin", "Balder"], answer: 2 },
+        { q: "Dewa petir Nordik yang memiliki palu sakti bernama Mjolnir adalah...", options: ["Thor", "Tyr", "Heimdall", "Freyr"], answer: 0 },
+        { q: "Dewa kenakalan dan tipu muslihat dalam mitologi Nordik adalah...", options: ["Fenrir", "Loki", "Jormungand", "Nidhogg"], answer: 1 },
+        { q: "Dalam mitologi Romawi, dewa laut yang setara dengan Poseidon adalah...", options: ["Jupiter", "Mars", "Neptunus", "Pluto"], answer: 2 },
+        { q: "Pencipta agung dan dewa tertinggi dalam mitologi bangsa Tiongkok kuno (pencipta alam semesta) adalah...", options: ["Pangu", "Nuwa", "Jade Emperor", "Shennong"], answer: 0 },
+        { q: "Dewi matahari dalam mitologi Shinto (Jepang) yang sangat dihormati adalah...", options: ["Tsukuyomi", "Susanoo", "Amaterasu", "Izanami"], answer: 2 },
+        { q: "Dewa kebijaksanaan dan pembuka jalan berwajah gajah dalam mitologi Hindu adalah...", options: ["Siwa", "Wisnu", "Ganesha", "Brahma"], answer: 2 },
+        { q: "Dewa pelindung dan pemelihara alam semesta dalam Trimurti Hindu adalah...", options: ["Brahma", "Wisnu", "Siwa", "Indra"], answer: 1 },
+        { q: "Dewa pencipta dalam trinitas Hindu (Trimurti) adalah...", options: ["Brahma", "Wisnu", "Siwa", "Agni"], answer: 0 },
+        
+        // Soal Karakter/Analisis 1 (No. 34)
+        { 
+            q: "[Analisis Karakter] Makhluk legendaris berwujud singa bersayap dengan kepala manusia dalam mitologi Mesopotamia kuno dan Mesir yang menjaga kuil disebut...", 
+            options: ["Sphinx", "Centaur", "Minotaur", "Pegasus"], 
+            answer: 0 
+        },
+        
+        // Soal Karakter/Analisis 2 (No. 35)
+        { 
+            q: "[Analisis Sumber Sejarah] Di manakah pusat peradaban utama tempat berkembangnya kisah mitologi dewa-dewi Olympus (Zeus, Hera, Poseidon)?", 
+            options: ["Yunani Kuno (Hellas)", "Mesir Lembah Nil", "Skandinavia Utara", "Nusantara Nusantara"], 
+            answer: 0 
+        }
+    ];
+
+    let currentQuestion = 0;
+    let userAnswers = new Array(questions.length).fill(null);
+    let timerInterval = null;
+    let timeLeft = 90 * 60; 
+    let timerStarted = false;
+    
+    let cheatCount = 0;
+    let cheatReasons = [];
+
+    // Keamanan Anti-Curang (Deteksi Tab/Fokus Keluar)
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden && !document.getElementById('step-exam').classList.contains('hidden')) {
+            recordCheat("Keluar dari tab atau meminimalkan browser");
+        }
+    });
+
+    window.addEventListener("blur", function() {
+        if (!document.getElementById('step-exam').classList.contains('hidden')) {
+            recordCheat("Berpindah fokus aplikasi / keluar dari halaman ujian");
+        }
+    });
+
+    function recordCheat(reason) {
+        cheatCount++;
+        let timestamp = new Date().toLocaleTimeString();
+        cheatReasons.push(`${reason} (pukul ${timestamp})`);
+        
+        let alertBox = document.getElementById('cheat-alert-box');
+        alertBox.innerHTML = `<div class="cheating-warning">PERINGATAN PELANGGARAN KECURANGAN (#${cheatCount})!<br>Alasan: ${reason}</div>`;
+        console.warn(`[KEAMANAN] Pelanggaran terdeteksi: ${cheatCount} - ${reason}`);
+    }
+
+    function mulaiUjian() {
+        const nama = document.getElementById('nama').value.trim();
+        const kelas = document.getElementById('kelas').value.trim();
+        const sekolah = document.getElementById('sekolah').value.trim();
+
+        if (!nama || !kelas || !sekolah) {
+            alert("Harap isi Nama Lengkap, Kelas, dan Sekolah terlebih dahulu!");
+            return;
+        }
+
+        document.getElementById('participant-info').innerText = `Peserta: ${nama} (${kelas} - ${sekolah})`;
+        document.getElementById('step-register').classList.add('hidden');
+        document.getElementById('step-exam').classList.remove('hidden');
+
+        loadQuestion();
+    }
+
+    function startTimerOnce() {
+        if (!timerStarted) {
+            timerStarted = true;
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    let minutes = Math.floor(timeLeft / 60);
+                    let seconds = timeLeft % 60;
+                    document.getElementById('timer').innerText = 
+                        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                } else {
+                    clearInterval(timerInterval);
+                    alert("Waktu ujian telah habis!");
+                    selesaiUjian();
+                }
+            }, 1000);
+        }
+    }
+
+    function loadQuestion() {
+        const qContainer = document.getElementById('question-container');
+        const q = questions[currentQuestion];
+
+        let html = `
+            <h3 style="color: var(--gold-light);">Soal ke-${currentQuestion + 1} dari ${questions.length}</h3>
+            <p style="font-size: 1.15rem; margin: 20px 0; line-height: 1.6;">${q.q}</p>
+            <div class="options-list">
+        `;
+
+        q.options.forEach((opt, idx) => {
+            let checked = userAnswers[currentQuestion] === idx ? 'checked' : '';
+            html += `
+                <label>
+                    <input type="radio" name="option" value="${idx}" ${checked} onclick="pilihJawaban(${idx})">
+                    ${opt}
+                </label>
+            `;
+        });
+
+        html += `</div>`;
+        qContainer.innerHTML = html;
+
+        const nextBtn = document.getElementById('next-btn');
+        if (currentQuestion === questions.length - 1) {
+            nextBtn.innerText = "Selesai & Kumpulkan Ujian";
+        } else {
+            nextBtn.innerText = "Selanjutnya";
+        }
+    }
+
+    function pilihJawaban(idx) {
+        startTimerOnce();
+        userAnswers[currentQuestion] = idx;
+    }
+
+    function selanjutnya() {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            loadQuestion();
+        } else {
+            if (confirm("Apakah Anda yakin ingin menyelesaikan ujian dan mengirimkan seluruh jawaban?")) {
+                selesaiUjian();
+            }
+        }
+    }
+
+    function selesaiUjian() {
+        clearInterval(timerInterval);
+        document.getElementById('step-exam').classList.add('hidden');
+        document.getElementById('step-result').classList.remove('hidden');
+
+        const nama = document.getElementById('nama').value.trim();
+        
+        let score = 0;
+        let reviewHTML = '';
+
+        questions.forEach((q, idx) => {
+            let userAns = userAnswers[idx];
+            let isCorrect = (userAns === q.answer);
+            if (isCorrect) score += (100 / questions.length);
+
+            let userAnsText = userAns !== null ? q.options[userAns] : "Tidak dijawab";
+            let correctAnsText = q.options[q.answer];
+
+            reviewHTML += `
+                <div class="result-item" style="border-left-color: ${isCorrect ? '#2ecc71' : '#e74c3c'}">
+                    <p style="margin-top:0;"><strong>Soal ${idx + 1}:</strong> ${q.q}</p>
+                    <p>Jawaban Anda: <span class="${isCorrect ? 'correct-ans' : 'wrong-ans'}">${userAnsText}</span></p>
+            `;
+
+            if (!isCorrect) {
+                reviewHTML += `<p>Kunci Jawaban yang Benar: <span class="correct-ans">${correctAnsText}</span></p>`;
+            }
+
+            reviewHTML += `</div>`;
+        });
+
+        let finalScoreRounded = Math.round(score);
+
+        // Teks sesuai format spesifik permintaan
+        document.getElementById('congrats-message').innerText = 
+            `Selamat ${nama} soal telah selesai dan waktu sudah habis, ini adalah nilai anda`;
+
+        document.getElementById('score-display').innerHTML = `Nilai Akhir Anda: <strong style="color: var(--gold-light); font-size: 2rem;">${finalScoreRounded}</strong> / 100`;
+
+        let cheatReportEl = document.getElementById('cheating-report');
+        if (cheatCount === 0) {
+            cheatReportEl.innerHTML = `Status Integritas: <span class="status-jujur">JUJUR</span>`;
+        } else {
+            let reasonsList = cheatReasons.join("<br>- ");
+            cheatReportEl.innerHTML = `Status Kecurangan: <span class="status-curang">TERDETEKSI CURANG (${cheatCount} kali)</span><br>
+                <div style="font-size:0.9rem; color:#ff9999; margin-top:8px; text-align:left; background:rgba(231,76,60,0.1); padding:12px; border-radius:6px; border:1px solid #e74c3c;">
+                <strong>Detail Pelanggaran:</strong><br>- ${reasonsList}
+                </div>`;
+        }
+
+        document.getElementById('review-container').innerHTML = reviewHTML;
+    }
+</script>
+
+</body>
+</html>
